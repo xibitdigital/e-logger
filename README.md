@@ -1,4 +1,4 @@
-# Console enahancement with Winston
+# Console enhancement with Winston
 
 Simple overrides to console to add some useful info.
 
