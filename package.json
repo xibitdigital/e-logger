@@ -1,0 +1,54 @@
+{
+    "name": "e-logger",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "flow": "flow",
+        "build": "babel src/ --out-dir dist/",
+        "dev": "concurrently \"npm run build -- --watch\" \"nodemon dist/index.js\"",
+        "test": "ava"
+    },
+    "author": "daniele@xibitdigital.com",
+    "license": "MIT",
+    "devDependencies": {
+        "ava": "^0.25.0",
+        "babel-cli": "6.26.0",
+        "babel-eslint": "8.0.3",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-flow": "6.23.0",
+        "concurrently": "^3.5.1",
+        "eslint": "4.13.1",
+        "eslint-config-airbnb-base": "12.1.0",
+        "eslint-plugin-flowtype": "^2.46.3",
+        "eslint-plugin-import": "2.8.0",
+        "eslint-plugin-prettier": "^2.6.0",
+        "flow": "^0.2.3",
+        "flow-bin": "0.61.0",
+        "nodemon": "^1.17.3",
+        "sinon": "^4.5.0"
+    },
+    "dependencies": {
+        "winston": "^2.4.2"
+    },
+    "ava": {
+        "files": [
+            "tests/*.js",
+            "!**/index.js"
+        ],
+        "source": [
+            "**/*.{js}",
+            "!dist/**/*"
+        ],
+        "concurrency": 5,
+        "failFast": true,
+        "failWithoutAssertions": false,
+        "tap": true,
+        "powerAssert": false,
+        "require": [
+            "babel-register"
+        ],
+        "babel": "inherit"
+    }
+}
